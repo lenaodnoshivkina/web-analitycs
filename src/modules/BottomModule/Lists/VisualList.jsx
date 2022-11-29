@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import VisualInput from './Inputs/Visual';
-import SoundInput from './Inputs/Sound';
+import VisualInput from '../Inputs/Visual';
 
-export default function InputList() {
+export default function VisualList(props) {
   return (
     <Wrapper>
-      <SoundInput
+      <VisualInput
         rightArr={['Ekh6oY', 'HiSNOO', '5W3Oc1', 'voAwYN']}
+        {...props}
       />
       <VisualInput
         rightArr={['VMOGSU', '2hJUhc', 'JZHel6', 'UQ6duQ']}
+        {...props}
       />
       <VisualInput
         rightArr={['zVpmAv', 'Wmo1Hv', 'BOxzl3', 'uHZ3tw']}
+        {...props}
       />
     </Wrapper>
   );
