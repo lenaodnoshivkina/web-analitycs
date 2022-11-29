@@ -9,7 +9,8 @@ export default function SoundInput(props) {
   const [play] = useSound(boopSfx);
 
   const validate = (inputArr, onChange) => {
-    const validateArr = inputArr.filter((item, index) => item !== rightArr[index]);
+    // eslint-disable-next-line max-len
+    const validateArr = inputArr.filter((item, index) => item.toLowerCase() !== rightArr[index].toLowerCase());
     if (validateArr.length) {
       play();
       setHasError(true);

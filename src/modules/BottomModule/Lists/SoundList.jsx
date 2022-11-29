@@ -10,11 +10,11 @@ export default function SoundList(props) {
         {...props}
       />
       <SoundInput
-        rightArr={['VMOGSU', '2hJUhc', 'JZHel6', 'UQ6duQ']}
+        rightArr={['VMOGSU', '2hJUhc', 'UZHet6', 'UQ6duQ']}
         {...props}
       />
       <SoundInput
-        rightArr={['zVpmAv', 'Wmo1Hv', 'BOxzl3', 'uHZ3tw']}
+        rightArr={['zVpmAv', 'Wmo1Hv', 'BOxzl3', 'vHZ3tw']}
         {...props}
       />
     </Wrapper>

@@ -10,11 +10,11 @@ export default function VisualList(props) {
         {...props}
       />
       <VisualInput
-        rightArr={['VMOGSU', '2hJUhc', 'JZHel6', 'UQ6duQ']}
+        rightArr={['VMOGSU', '2hJUhc', 'UZHet6', 'UQ6duQ']}
         {...props}
       />
       <VisualInput
-        rightArr={['zVpmAv', 'Wmo1Hv', 'BOxzl3', 'uHZ3tw']}
+        rightArr={['zVpmAv', 'Wmo1Hv', 'BOxzl3', 'vHZ3tw']}
         {...props}
       />
     </Wrapper>

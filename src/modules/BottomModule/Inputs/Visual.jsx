@@ -7,7 +7,8 @@ export default function VisualInput(props) {
   const [error, setError] = useState(false);
 
   const validate = (inputArr, onChange) => {
-    const validateArr = inputArr.filter((item, index) => item !== rightArr[index]);
+    // eslint-disable-next-line max-len
+    const validateArr = inputArr.filter((item, index) => item.toLowerCase() !== rightArr[index].toLowerCase());
     if (validateArr.length) {
       setError(true);
       setHasError(true);

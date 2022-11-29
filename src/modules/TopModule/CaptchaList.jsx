@@ -3,8 +3,11 @@ import { ImageList, ImageListItem } from '@mui/material';
 import styled from 'styled-components';
 import Images from './ImageList';
 import Timer from './timer';
+import { deviceType } from '../../helpers';
 
 export default function CaptchaList() {
+  const device = deviceType();
+  const isMobile = device === 'mobile';
   return (
     <>
       <CustomImageList cols={4} rowHeight={66} gap={10}>
@@ -20,7 +23,7 @@ export default function CaptchaList() {
           </ImageListItem>
         ))}
       </CustomImageList>
-      <Timer />
+      {!isMobile && <Timer />}
     </>
   );
 }
