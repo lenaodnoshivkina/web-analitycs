@@ -47,7 +47,7 @@ export const deviceType = () => {
 
 export const saveGoal = (goalName, errors = 0) => {
   const [,, start] = init();
-  const time = new Date() - start;
+  const time = new Date() - Date.parse(start);
   // eslint-disable-next-line no-undef
   ym(91263052, 'reachGoal', goalName, { time, errors });
   send(goalName, time, errors);
