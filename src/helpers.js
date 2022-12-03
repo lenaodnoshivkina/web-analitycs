@@ -1,17 +1,36 @@
 export function getVersion() {
+  return window.localStorage.getItem('version');
+}
+export const init = () => {
+  let uid = window.localStorage.getItem('uid');
+  if (uid === null) {
+    uid = Math.round(Math.random() * 1000000000);
+    window.localStorage.setItem('uid', uid);
+  }
+
   let version = window.localStorage.getItem('version');
   if (version === null) {
     version = Math.round(Math.random());
     window.localStorage.setItem('version', version);
   }
-  return version;
-}
-export function send(version, startTime, errors) {
+
+  let start = window.localStorage.getItem('start');
+  if (start === null) {
+    start = new Date();
+    window.localStorage.setItem('start', start);
+  }
+  return [uid, version, start];
+};
+export function send(goalName, time, errors = 0) {
+  const [uid, version] = init();
   const x = new XMLHttpRequest();
   const f = new FormData();
   f.append('version', version);
-  f.append('duration', new Date() - startTime);
+  f.append('uid', uid);
+  f.append('goal', goalName);
+  f.append('time', time);
   f.append('errors', errors);
+  f.append('ym_uid', window.localStorage.getItem('_ym_uid'));
   x.open('POST', 'save.php');
   x.send(f);
 }
@@ -24,4 +43,12 @@ export const deviceType = () => {
     return 'mobile';
   }
   return 'desktop';
+};
+
+export const saveGoal = (goalName, errors = 0) => {
+  const [,, start] = init();
+  const time = new Date() - start;
+  // eslint-disable-next-line no-undef
+  ym(91263052, 'reachGoal', goalName, { time, errors });
+  send(goalName, time, errors);
 };

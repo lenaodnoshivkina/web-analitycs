@@ -1,8 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button, Typography } from '@mui/material';
+import { init, saveGoal } from '../../helpers';
 
 export default function Start({ updateStage }) {
+  const clickHandler = () => {
+    const [uid, version, start] = init();
+    // eslint-disable-next-line no-undef
+    ym(91263052, 'params', {
+      version,
+      uid,
+      start,
+    });
+    saveGoal('startTest');
+    updateStage();
+  };
+
   return (
     <>
       <Title variant="h3">Привет!</Title>
@@ -14,7 +27,7 @@ export default function Start({ updateStage }) {
         Если вы остались на странице с картинками, то где-то была допущена ошибка.
       </Typography>
       <Warning variant="body1">ВНИМАНИЕ: для прохождения эксперимента необходимо включить звук на устройстве.</Warning>
-      <CustomButton variant="contained" color="success" onClick={updateStage}>Начать</CustomButton>
+      <CustomButton variant="contained" color="success" onClick={clickHandler}>Начать</CustomButton>
     </>
   );
 }

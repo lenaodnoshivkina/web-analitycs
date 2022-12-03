@@ -7,10 +7,8 @@ import Finish from './modules/Finish';
 
 function App() {
   const [stage, updateStage] = useState('start');
-  const [startTime, setStartTime] = useState(null);
   const startHandler = () => {
     updateStage('test');
-    setStartTime(new Date());
   };
   let RenderComponent;
 
@@ -24,7 +22,6 @@ function App() {
           <TopModule />
           <BottomModule
             updateStage={updateStage}
-            startTime={startTime}
           />
         </>
       );

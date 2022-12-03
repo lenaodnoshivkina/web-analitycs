@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Button } from '@mui/material';
 import useSound from 'use-sound';
 import NumberList from '../NumberList';
-import { getVersion, send } from '../../helpers';
+import { getVersion, saveGoal } from '../../helpers';
 import SoundList from './Lists/SoundList';
 import VisualList from './Lists/VisualList';
 import boopSfx from '../../sounds/boop.wav';
 
-export default function BottomModule({ updateStage, startTime }) {
+export default function BottomModule({ updateStage }) {
   const [error, setError] = useState(false);
   const [hasError, setHasError] = useState(null);
   const [amountOfError, setAmountOfError] = useState(0);
@@ -17,7 +17,7 @@ export default function BottomModule({ updateStage, startTime }) {
 
   const submitHandler = () => {
     if (!hasError && hasError !== null) {
-      send(ver, startTime, amountOfError);
+      saveGoal('finishTest', amountOfError);
       updateStage('finish');
     } else if (ver === 0) {
       play();
