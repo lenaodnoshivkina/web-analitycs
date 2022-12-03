@@ -6,7 +6,7 @@ export default function VisualList(props) {
   return (
     <Wrapper>
       <VisualInput
-        rightArr={['Ekh6oY', 'HiSNOO', '5W3Oc1', 'voAwYN']}
+        rightArr={['Ekh6uY', 'HiSNOO', '5W3Oc1', 'voAwYN']}
         {...props}
       />
       <VisualInput
@@ -14,7 +14,7 @@ export default function VisualList(props) {
         {...props}
       />
       <VisualInput
-        rightArr={['zVpmAv', 'Wmo1Hv', 'BOxzl3', 'vHZ3tw']}
+        rightArr={['zVpmAw', 'Wmo1Hv', 'Boxzl3', 'vHZ3tw']}
         {...props}
       />
     </Wrapper>
