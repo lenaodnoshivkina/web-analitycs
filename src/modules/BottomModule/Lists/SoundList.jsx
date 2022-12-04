@@ -14,7 +14,7 @@ export default function SoundList(props) {
         {...props}
       />
       <SoundInput
-        rightArr={['zVpmAw', 'Wmo1Hv', 'Boxzl3', 'vHZ3tw']}
+        rightArr={['zVpmAw', 'Wmo1Hv', 'Bqxzl3', 'vHZ3tw']}
         {...props}
       />
     </Wrapper>
