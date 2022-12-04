@@ -12,6 +12,7 @@ export default function Start({ updateStage }) {
       uid,
       start,
     });
+    window.localStorage.removeItem('start');
     saveGoal('startTest');
     updateStage();
   };
